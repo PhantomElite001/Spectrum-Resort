@@ -1,92 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spectrum Event Center and Resort | Limbe, Cameroon</title>
-    <meta name="description" content="Spectrum Event Center and Resort hosts weddings, birthdays and corporate events in Limbe, Cameroon.">
-    <meta property="og:title" content="Spectrum Event Center and Resort">
-    <meta property="og:description" content="Weddings, birthdays and corporate events in Limbe, Cameroon.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_CM">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spectrum Event Center and Resort | Limbe, Cameroon</title>
+<meta name="description" content="Spectrum Event Center and Resort hosts weddings, birthdays and corporate events in Limbe, Cameroon. See the venue and check your date on WhatsApp.">
+<meta name="theme-color" content="#FBF8F2">
+<meta property="og:title" content="Spectrum Event Center and Resort">
+<meta property="og:description" content="Weddings, birthdays and corporate events in Limbe, Cameroon.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/photo1.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#000000db; --cream:#14110b; --ink:#ecd6bb; --muted:#6B6358;
+  --gold:#C28A2E; --gold-light:#E3B65F; --gold-dark:#9A6B1B; --line:#E6DCC6;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ivory);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+.eyebrow{font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-dark);font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12}
+h2{font-size:clamp(2rem,5vw,3rem);margin-top:.5rem}
+
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.7rem;border-radius:999px;font-weight:500;font-size:.95rem;letter-spacing:.04em;transition:transform .2s,background .2s,box-shadow .2s;cursor:pointer;border:0}
+.btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#2A1D07;box-shadow:0 8px 24px rgba(194,138,46,.28)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(194,138,46,.38)}
+.btn-line{border:1px solid var(--gold);color:var(--gold-dark);background:transparent}
+.btn-line:hover{background:var(--gold);color:#fff}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(21, 18, 14, 0.8705882352941177);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand img{height:52px;width:auto}
+.brand-text{display:none;font-family:var(--serif);font-size:1.5rem;letter-spacing:.3em;color:var(--gold-dark);font-weight:600}
+.no-logo .brand-text{display:block}
+.nav-links{display:none;gap:2rem;font-size:.9rem;letter-spacing:.06em}
+.nav-links a:hover{color:var(--gold-dark)}
+.nav .btn{padding:.6rem 1.2rem;font-size:.85rem}
+@media(min-width:820px){.nav-links{display:flex}}
+@media (max-width: 899px){
+  .hero-logo{display:none}
+  .hero-photo{min-height:340px}
+  .hero-text{padding:2rem 0 2.5rem}
+  .hero h1{font-size:2.4rem;margin:.6rem 0 .9rem}
+}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr}
+.hero-text{padding:3.2rem 0 3rem;order:2}
+.hero-text .wrap-in{width:min(560px,100% - 40px);margin-inline:auto}
+.hero-logo{height:200px;margin-left:-14px;width:auto;margin-bottom:1.2rem}
+.no-logo .hero-logo{display:none}
+.hero h1{font-size:clamp(2.6rem,7vw,4.2rem);margin:.9rem 0 1.1rem}
+.hero h1 em{font-style:italic;color:var(--gold-dark)}
+.hero p.lead{color:var(--muted);font-size:1.08rem;max-width:44ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.hero-photo{order:1;position:relative;min-height:320px;background:linear-gradient(160deg,#2a2218,#4a3a1f 60%,#7a5a22);overflow:hidden}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,14,6,.35),transparent 55%)}
+@media(min-width:900px){
+  .hero{grid-template-columns:1fr 1fr;min-height:calc(100vh - 68px)}
+  .hero-text{order:1;display:flex;align-items:center;padding:4rem 0}
+  .hero-text .wrap-in{margin-inline:auto 3rem;width:min(520px,100% - 40px)}
+  .hero-photo{order:2}
+}
+
+/* events */
+section{padding:5.5rem 0}
+.events{background:var(--cream)}
+.head{text-align:center;max-width:620px;margin:0 auto 3rem}
+.head p{color:var(--muted);margin-top:.9rem}
+.cards{display:grid;gap:1.4rem}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--ivory);border:1px solid var(--line);border-radius:6px;padding:2.2rem 1.8rem;text-align:center;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(60,40,10,.1)}
+.card .ico{width:54px;height:54px;margin:0 auto 1.2rem;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold-dark)}
+.card .ico svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:1.7rem;margin-bottom:.5rem}
+.card p{color:var(--muted);font-size:.98rem}
+
+/* gallery */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+.grid figure{overflow:hidden;border-radius:4px;aspect-ratio:1/1;background:var(--cream);cursor:zoom-in;position:relative}
+.grid figure img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.grid figure:hover img{transform:scale(1.06)}
+@media(min-width:760px){
+  .grid{grid-template-columns:repeat(4,1fr);gap:.9rem}
+  .grid figure:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+  .grid figure:nth-child(6){grid-column:span 2;aspect-ratio:2/1}
+}
+.grid figure.gone{display:none}
+
+/* steps */
+.steps{background:var(--cream);color:#F5EEDF}
+.steps .eyebrow{color:var(--gold-light)}
+.steps .head p{color:#BDB3A0}
+.step-list{display:grid;gap:2rem;counter-reset:s}
+@media(min-width:760px){.step-list{grid-template-columns:repeat(3,1fr);gap:2.5rem}}
+.step{text-align:center;padding:0 .5rem}
+.step::before{counter-increment:s;content:"0" counter(s);display:block;font-family:var(--serif);font-size:3.2rem;color:var(--gold-light);line-height:1;margin-bottom:.7rem}
+.step h3{font-size:1.5rem;margin-bottom:.4rem}
+.step p{color:#BDB3A0;font-size:.97rem}
+.steps .cta{text-align:center;margin-top:3rem}
+
+/* contact */
+.contact-box{max-width:640px;margin:0 auto;text-align:center}
+.contact-box > p{color:var(--muted);margin:1rem 0 2rem}
+.details{display:grid;gap:.9rem;margin-top:2.2rem}.details:has(.on){border-top:1px solid var(--line);padding-top:2rem}
+.details div{display:none}
+.details div.on{display:block}
+.details span{display:block;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.15rem}
+.details b{font-weight:500;font-size:1.05rem}
+
+footer{background:#17130E;color:#9B917F;text-align:center;padding:2.4rem 0 5.5rem;font-size:.88rem}
+footer img{height:110px;margin:0 auto 1rem;filter:none}
+.no-logo footer img{display:none}
+footer .credit{margin-top:.4rem;font-size:.8rem;opacity:.8}
+@media(min-width:820px){footer{padding-bottom:2.4rem}}
+
+/* sticky whatsapp (mobile) */
+.sticky-wa{position:fixed;right:16px;bottom:16px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.28)}
+.sticky-wa svg{width:30px;height:30px;fill:#fff}
+@media(min-width:820px){.sticky-wa{display:none}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,7,3,.94);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.lb.open{display:flex}
+.lb img{max-height:88vh;max-width:94vw;border-radius:3px}
+.lb button{position:absolute;background:none;border:0;color:#fff;font-size:2.4rem;cursor:pointer;padding:.5rem 1rem;line-height:1}
+.lb .x{top:10px;right:14px}.lb .p{left:6px;top:50%}.lb .n{right:6px;top:50%}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <header class="site-header" id="top">
-        <div class="nav-wrap">
-            <a class="brand" href="#top" aria-label="Spectrum homepage">
-                <span class="brand-mark" aria-hidden="true">S</span>
-                <span class="brand-name">Spectrum</span>
-            </a>
-            <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
-                <span class="sr-only">Open menu</span>
-                <span></span><span></span>
-            </button>
-            <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-                <a href="#events">Events</a>
-                <a href="#location">Location</a>
-            </nav>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Spectrum Event Center and Resort">
+      <img src="img/logo.png" alt="Spectrum logo" id="navLogo">
+      <span class="brand-text">SPECTRUM</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#events">Events</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#book">How to book</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gold wa-link" href="#contact">Check your date</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-text">
+      <div class="wrap-in rv">
+        <img class="hero-logo" src="img/logo.png" alt="">
+        <p class="eyebrow">Event Center &amp; Resort · Limbe</p>
+        <h1>Where your <em>celebrations</em> come to life.</h1>
+        <p class="lead">Weddings, birthdays and corporate events in Limbe. Our hall seats 250 to 300 guests.</p>
+        <div class="hero-cta">
+          <a class="btn btn-gold wa-link" href="https://wa.me/237657170883">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.9 2.100c.1.200.1.400 0 .5l-.4.600-.4.500c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.700-.1l2 1c.3.100.5.200.6.300.1.200.1.800-.2 1.400Z"/></svg>
+            Book on WhatsApp
+          </a>
+          <a class="btn btn-line" href="#gallery">View the venue</a>
         </div>
-    </header>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="img/photo1.jpg" alt="Spectrum Event Center and Resort, Limbe" fetchpriority="high" onerror="this.remove()">
+    </div>
+  </section>
 
-    <main id="main-content">
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-pattern" aria-hidden="true"></div>
-            <div class="hero-content reveal">
-                <p class="eyebrow">Event Center &amp; Resort</p>
-                <h1 id="hero-title">Spectrum</h1>
-                <p class="hero-line">Weddings, birthdays and corporate events in Limbe.</p>
-                <a class="hero-location" href="#location">
-                    <span aria-hidden="true">●</span> Limbe, Cameroon
-                </a>
-            </div>
-        </section>
+  <section class="events" id="events">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="eyebrow">Your occasion</p>
+        <h2>Events we host</h2>
+        <p>Whatever you are celebrating, Spectrum is ready to host it.</p>
+      </div>
+      <div class="cards">
+        <article class="card rv">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.400-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.600-9 9-9 9Z"/></svg></div>
+          <h3>Weddings</h3>
+          <p>A setting for the most important day of your life.</p>
+        </article>
+        <article class="card rv">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 21h16M6 21v-7h12v7M12 14V9M12 9c-1.200-1.200-1.200-2.600 0-4 1.200 1.400 1.200 2.800 0 4Z"/></svg></div>
+          <h3>Birthdays</h3>
+          <p>Bring family and friends together and make it memorable.</p>
+        </article>
+        <article class="card rv">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></div>
+          <h3>Corporate Events</h3>
+          <p>Meetings, launches and company gatherings, handled professionally.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        <section class="events section" id="events" aria-labelledby="events-title">
-            <div class="section-heading reveal">
-                <p class="eyebrow">Your occasion</p>
-                <h2 id="events-title">Events we host</h2>
-            </div>
-            <div class="event-grid">
-                <article class="event-card reveal">
-                    <span class="event-number">01</span>
-                    <h3>Weddings</h3>
-                    <p>Celebrate a meaningful day in Limbe.</p>
-                </article>
-                <article class="event-card reveal">
-                    <span class="event-number">02</span>
-                    <h3>Birthdays</h3>
-                    <p>Mark birthdays with family and friends.</p>
-                </article>
-                <article class="event-card reveal">
-                    <span class="event-number">03</span>
-                    <h3>Corporate Events</h3>
-                    <p>Bring people together for professional occasions.</p>
-                </article>
-            </div>
-        </section>
+  <section id="gallery">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="eyebrow">Gallery</p>
+        <h2>See the venue</h2>
+        <p>Take a look around before you visit.</p>
+      </div>
+      <div class="grid rv" id="grid">
+        <figure><img src="img/photo1.jpg" alt="Spectrum Event Center and Resort, photo 1" loading="lazy"></figure>
+        <figure><img src="img/photo2.jpg" alt="Spectrum Event Center and Resort, photo 2" loading="lazy"></figure>
+        <figure><img src="img/photo3.jpg" alt="Spectrum Event Center and Resort, photo 3" loading="lazy"></figure>
+        <figure><img src="img/photo4.jpg" alt="Spectrum Event Center and Resort, photo 4" loading="lazy"></figure>
+        <figure><img src="img/photo5.jpg" alt="Spectrum Event Center and Resort, photo 5" loading="lazy"></figure>
+        <figure><img src="img/photo6.jpg" alt="Spectrum Event Center and Resort, photo 6" loading="lazy"></figure>
+        <figure><img src="img/photo7.jpg" alt="Spectrum Event Center and Resort, photo 7" loading="lazy"></figure>
+        <figure><img src="img/photo8.jpg" alt="Spectrum Event Center and Resort, photo 8" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
 
-        <section class="location section" id="location" aria-labelledby="location-title">
-            <div class="location-inner reveal">
-                <div>
-                    <p class="eyebrow">Find us</p>
-                    <h2 id="location-title">Limbe, Cameroon</h2>
-                </div>
-                <p class="location-note">For availability and booking information, direct contact details are needed.</p>
-            </div>
-        </section>
-    </main>
+  <section class="steps" id="book">
+    <div class="wrap">
+      <div class="head rv">
+        <p class="eyebrow">Simple booking</p>
+        <h2>How to book</h2>
+        <p>Three steps, all on WhatsApp.</p>
+      </div>
+      <div class="step-list">
+        <div class="step rv"><h3>Message us</h3><p>Tell us your event type and the date you have in mind.</p></div>
+        <div class="step rv"><h3>Confirm the details</h3><p>We confirm availability and answer your questions.</p></div>
+        <div class="step rv"><h3>Secure your date</h3><p>Agree the arrangements with us and your date is held.</p></div>
+      </div>
+      <div class="cta rv"><a class="btn btn-gold wa-link" href="#contact">Check availability</a></div>
+    </div>
+  </section>
 
-    <footer class="site-footer">
-        <p>Spectrum Event Center and Resort</p>
-        <p>Website by Marvelous</p>
-    </footer>
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-box rv">
+        <p class="eyebrow">Contact</p>
+        <h2>Plan your event with us</h2>
+        <p>Send us a message with your event type and date and we will get back to you.</p>
+        <a class="btn btn-gold wa-link" href="https://wa.me/237657170883">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.9 2.100c.1.200.1.400 0 .5l-.4.600-.4.500c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.700-.1l2 1c.3.100.5.200.6.300.1.200.1.800-.2 1.400Z"/></svg>
+          Message on WhatsApp
+        </a>
+        <div class="details" id="details">
+          <div id="d-phone"><span>Phone</span><b></b></div>
+          <div id="d-addr"><span>Address</span><b></b></div>
+          <div id="d-hours"><span>Hours</span><b></b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <script src="js/main.js"></script>
+<footer>
+  <img src="img/logo.png" alt="">
+  <p>Spectrum Event Center and Resort · Limbe, Cameroon</p>
+  <p class="credit">Website by Marvelous</p>
+</footer>
+
+<a class="sticky-wa wa-link" href="htpps://wa.me/237657170883" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.9 2.100c.1.200.1.400 0 .5l-.4.600-.4.500c-.1.100-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.700-.1l2 1c.3.100.5.200.6.300.1.200.1.800-.2 1.400Z"/></svg>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-photo.jpg7="true" aria-label="Photo viewer">
+  <button class="x" aria-label="Close">×</button>
+  <button class="p" aria-label="Previous">‹</button>
+  <img id="lbImg" alt="">
+  <button class="n" aria-label="Next">›</button>
+</div>
+
+<script>
+/* ===== EDIT THESE ===== */
+var CONFIG = {
+  whatsapp: "",   // international format, digits only, e.g. 2376XXXXXXXX
+  phone:    "",   // shown on the page, e.g. +237 6XX XXX XXX
+  address:  "",   // e.g. street / area, Limbe
+  hours:    ""    // e.g. Mon - Sat, 8am - 10pm
+};
+/* ====================== */
+
+(function(){
+  var msg = encodeURIComponent("Hello, I would like to check availability for an event at Spectrum.");
+  if (CONFIG.whatsapp) {
+    document.querySelectorAll(".wa-link").forEach(function(a){
+      a.href = "https://wa.me/237657170883" + "?text=" + msg;
+      a.target = "_blank"; a.rel = "noopener";
+    });
+  }
+  [["d-phone","phone"],["d-addr","address"],["d-hours","hours"]].forEach(function(p){
+    if (CONFIG[p[1]]) { var el=document.getElementById(p[0]); el.classList.add("on"); el.querySelector("b").textContent=CONFIG[p[1]]; }
+  });
+
+  /* logo fallback */
+  var probe = new Image();
+  probe.onerror = function(){ document.body.classList.add("no-logo"); document.getElementById("navLogo").style.display="none"; };
+  probe.src = "img/logo.png";
+
+  /* hide gallery slots with no photo */
+  var figs = Array.prototype.slice.call(document.querySelectorAll("#grid figure"));
+  figs.forEach(function(f){ f.querySelector("img").addEventListener("error", function(){ f.classList.add("gone"); }); });
+
+  /* lightbox */
+  var lb=document.getElementById("lb"), lbImg=document.getElementById("lbImg"), idx=0;
+  function live(){ return figs.filter(function(f){return !f.classList.contains("gone");}); }
+  function show(i){ var L=live(); if(!L.length) return; idx=(i+L.length)%L.length; var im=L[idx].querySelector("img"); lbImg.src=im.src; lbImg.alt=im.alt; }
+  figs.forEach(function(f){ f.addEventListener("click", function(){ var L=live(); idx=L.indexOf(f); show(idx); lb.classList.add("open"); }); });
+  lb.querySelector(".x").onclick=function(){ lb.classList.remove("open"); };
+  lb.querySelector(".p").onclick=function(){ show(idx-1); };
+  lb.querySelector(".n").onclick=function(){ show(idx+1); };
+  lb.addEventListener("click", function(e){ if(e.target===lb) lb.classList.remove("open"); });
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("open")) return;
+    if(e.key==="Escape") lb.classList.remove("open");
+    if(e.key==="ArrowLeft") show(idx-1);
+    if(e.key==="ArrowRight") show(idx+1);
+  });
+
+  /* reveal on scroll */
+  var rv=document.querySelectorAll(".rv");
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }); },{threshold:.12});
+    rv.forEach(function(n){ io.observe(n); });
+  } else { rv.forEach(function(n){ n.classList.add("in"); }); }
+})();
+</script>
 </body>
 </html>
